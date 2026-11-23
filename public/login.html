@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login</title><link rel="stylesheet" href="/style.css">
+</head><body class="center">
+<div class="card login">
+  <h1>Social Autoposter</h1>
+  <input id="pw" type="password" placeholder="Password" autofocus>
+  <button id="go">Login</button>
+  <p id="err" class="err"></p>
+</div>
+<script>
+async function login(){
+  const r = await fetch('/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:document.getElementById('pw').value})});
+  if(r.ok) location.href='/'; else document.getElementById('err').textContent=(await r.json()).error||'Error';
+}
+document.getElementById('go').onclick=login;
+document.getElementById('pw').onkeydown=e=>{if(e.key==='Enter')login()};
+</script>
+</body></html>

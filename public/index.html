@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social Autoposter</title><link rel="stylesheet" href="/style.css">
+</head><body>
+<header>
+  <h1>Social Autoposter</h1>
+  <div id="chips"></div>
+  <button class="ghost" id="logout">Logout</button>
+</header>
+<main>
+  <section class="card">
+    <h2>Add RSS feed</h2>
+    <div class="row">
+      <input id="url" placeholder="https://example.com/feed">
+      <button id="add">Add</button>
+    </div>
+    <p id="msg" class="err"></p>
+    <p class="hint">Naya feed add karte hi purane articles "seen" ho jate hain; sirf aage ke naye articles post honge.</p>
+  </section>
+
+  <section class="card">
+    <h2>Feeds</h2>
+    <div class="scroll"><table id="feeds"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Post history <button class="ghost small" id="refresh">Refresh</button></h2>
+    <div class="scroll"><table id="posts"></table></div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body></html>
